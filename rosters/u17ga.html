@@ -1,0 +1,225 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#10296d"><title>City SC Utah | U17 Girls Academy</title><style>
+:root{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#172a51;background:#f3f6fb}*{box-sizing:border-box}body{margin:0}header{background:linear-gradient(130deg,#0b2678,#152a55);color:white;text-align:center;padding:24px 16px 34px}header img{width:94px;height:94px;object-fit:contain}h1{font-size:clamp(25px,5vw,40px);margin:9px 0 4px}header p{margin:4px 0;color:#ffe3aa}a.back{display:inline-block;color:white;text-decoration:none;border:1px solid #ffffff85;padding:10px 17px;border-radius:24px;margin-top:16px}main{max-width:1100px;margin:auto;padding:25px 16px}.intro{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:20px}.intro h2{margin:0;font-size:21px}.intro p{margin:5px 0 0;color:#52617a}.controls{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:10px;margin:0 0 13px}.controls input,.controls select{width:100%;min-width:0;font:inherit;padding:12px;border:1px solid #cbd5e5;border-radius:10px;background:white}.count{font-size:13px;color:#5d6a7f;margin-bottom:15px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 4px 16px #132c4c15;border:1px solid #e7ebf3}.portrait{height:210px;background:#dfe8f5;position:relative}.portrait img{width:100%;height:100%;object-fit:cover;object-position:center 26%}.number{position:absolute;top:12px;left:12px;background:#102d86;color:white;border-radius:9px;padding:7px 10px;font-weight:800}.info{padding:15px}.info h3{font-size:18px;margin:0 0 7px}.position{display:inline-block;background:#fff0e0;color:#984313;font-size:12px;font-weight:700;padding:5px 9px;border-radius:16px}.details{display:flex;gap:8px;justify-content:space-between;flex-wrap:wrap;margin-top:12px;font-size:13px;color:#4c5b74}.school{font-size:13px;color:#4c5b74;margin:12px 0 6px}.email{font-size:12px;overflow-wrap:anywhere;color:#123e9a}footer{text-align:center;color:#63718a;font-size:12px;padding:26px 15px}@media(max-width:750px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.controls{grid-template-columns:repeat(2,minmax(0,1fr))}.portrait{height:180px}.info{padding:12px}.info h3{font-size:15px}}@media(max-width:390px){.portrait{height:145px}.details{font-size:12px}.controls{gap:7px}}
+</style></head><body>
+<header><img src="../logo.png" alt="City SC Utah logo"><h1>CITY SC UTAH</h1><p>U17 GIRLS · GIRLS ACADEMY</p><p>To build great players and great people</p><a class="back" href="../index.html">← Back to Roster Hub</a></header>
+<main><section class="intro"><div><h2>Team Roster</h2><p>Search and explore the U17 Girls Academy team.</p></div></section>
+<div class="controls"><input id="search" type="search" placeholder="Search player name" aria-label="Search player name"><input id="jersey" type="number" min="0" placeholder="Jersey #" aria-label="Search jersey number"><select id="position" aria-label="Filter position"><option value="">All positions</option><option value="GK">Goalkeeper</option><option value="DEF">Defender</option><option value="MID">Midfielder</option><option value="FWD">Forward</option></select><select id="year" aria-label="Graduation year"><option value="">All graduation years</option><option value="2028">2028</option><option value="2029">2029</option></select></div><div id="count" class="count" aria-live="polite"></div><div id="grid" class="grid"></div></main>
+<footer>City SC Utah · U17 Girls Academy · Player details based on supplied team profile image</footer><script>
+const PLAYERS = [
+  {
+    "name": "Kayda Rowberry",
+    "number": 0,
+    "position": "GK",
+    "year": 2028,
+    "gpa": "3.6",
+    "school": "Mountain Ridge High School",
+    "email": "kaydaerowberry@gmail.com",
+    "photo": "../images/u17-girls/kayda-rowberry.jpg"
+  },
+  {
+    "name": "Stella Joyal",
+    "number": 1,
+    "position": "GK",
+    "year": 2028,
+    "gpa": "4.0",
+    "school": "Riverton High School",
+    "email": "stellajoyal@gmail.com",
+    "photo": "../images/u17-girls/stella-joyal.jpg"
+  },
+  {
+    "name": "Kenzlie Binks",
+    "number": 2,
+    "position": "MID",
+    "year": 2028,
+    "gpa": "3.2",
+    "school": "Bingham High School",
+    "email": "kenzliebinks104@gmail.com",
+    "photo": "../images/u17-girls/kenzlie-binks.jpg"
+  },
+  {
+    "name": "Jane Thackeray",
+    "number": 3,
+    "position": "RW",
+    "year": 2029,
+    "gpa": "4.0",
+    "school": "Brighton High School",
+    "email": "janesthackeray@gmail.com",
+    "photo": "../images/u17-girls/jane-thackeray.jpg"
+  },
+  {
+    "name": "Kara Lorentz",
+    "number": 4,
+    "position": "MID, DEF",
+    "year": 2028,
+    "gpa": "4.0",
+    "school": "Homeschooled",
+    "email": "klorentz311@gmail.com",
+    "photo": "../images/u17-girls/kara-lorentz.jpg"
+  },
+  {
+    "name": "Maddie McCallion",
+    "number": 5,
+    "position": "FWD",
+    "year": 2028,
+    "gpa": "3.92",
+    "school": "Park City High School",
+    "email": "maddiemccallion28@gmail.com",
+    "photo": "../images/u17-girls/maddie-mccallion.jpg"
+  },
+  {
+    "name": "Josie Elsasser",
+    "number": 6,
+    "position": "DEF",
+    "year": 2029,
+    "gpa": "4.0",
+    "school": "Riverton High School",
+    "email": "elsasser.josie@gmail.com",
+    "photo": "../images/u17-girls/josie-elsasser.jpg"
+  },
+  {
+    "name": "Raegan Bowers",
+    "number": 8,
+    "position": "FWD, MID",
+    "year": 2029,
+    "gpa": "4.0",
+    "school": "Park City High School",
+    "email": "Raeganbowers8@gmail.com",
+    "photo": "../images/u17-girls/raegan-bowers.jpg"
+  },
+  {
+    "name": "Kaylee Carlson",
+    "number": 10,
+    "position": "RW, FWD",
+    "year": 2028,
+    "gpa": "4.0",
+    "school": "Herriman High School",
+    "email": "kaylee.soccer.10@gmail.com",
+    "photo": "../images/u17-girls/kaylee-carlson.jpg"
+  },
+  {
+    "name": "Taylor Beck",
+    "number": 11,
+    "position": "CB",
+    "year": 2028,
+    "gpa": "3.9",
+    "school": "Olympus High School",
+    "email": "taylorelisabethbeck@gmail.com",
+    "photo": "../images/u17-girls/taylor-beck.jpg"
+  },
+  {
+    "name": "Quinn Haragan",
+    "number": 12,
+    "position": "FWD",
+    "year": 2028,
+    "gpa": "4.4",
+    "school": "Corner Canyon High School",
+    "email": "qharagan@gmail.com",
+    "photo": "../images/u17-girls/quinn-haragan.jpg"
+  },
+  {
+    "name": "Jocelyn Kawa",
+    "number": 13,
+    "position": "MID",
+    "year": 2028,
+    "gpa": "4.0",
+    "school": "Herriman High School",
+    "email": "jocelynakawa@gmail.com",
+    "photo": "../images/u17-girls/jocelyn-kawa.jpg"
+  },
+  {
+    "name": "Sasha Alonso",
+    "number": 14,
+    "position": "FWD, MID",
+    "year": 2029,
+    "gpa": "4.0",
+    "school": "Herriman High School",
+    "email": "ritaalonso75@gmail.com",
+    "photo": "../images/u17-girls/sasha-alonso.jpg"
+  },
+  {
+    "name": "Natalie Boehm",
+    "number": 15,
+    "position": "MID",
+    "year": 2028,
+    "gpa": "4.0",
+    "school": "Herriman High School",
+    "email": "natalieboehm15@gmail.com",
+    "photo": "../images/u17-girls/natalie-boehm.jpg"
+  },
+  {
+    "name": "Liv Rockwood",
+    "number": 17,
+    "position": "FWD, DEF",
+    "year": 2028,
+    "gpa": "3.5",
+    "school": "Corner Canyon High School",
+    "email": "livrockwood37@gmail.com",
+    "photo": "../images/u17-girls/liv-rockwood.jpg"
+  },
+  {
+    "name": "Jacque Scott",
+    "number": 19,
+    "position": "MID",
+    "year": 2028,
+    "gpa": "4.0",
+    "school": "Brighton High School",
+    "email": "Jacquescott99@gmail.com",
+    "photo": "../images/u17-girls/jacque-scott.jpg"
+  },
+  {
+    "name": "Iris Ripperton",
+    "number": 22,
+    "position": "FWD, DEF",
+    "year": 2029,
+    "gpa": "4.0",
+    "school": "West High School",
+    "email": "irisripperton@gmail.com",
+    "photo": "../images/u17-girls/iris-ripperton.jpg"
+  },
+  {
+    "name": "Joss Buswell",
+    "number": 20,
+    "position": "CB",
+    "year": 2028,
+    "gpa": "4.0",
+    "school": "Woods Cross High School",
+    "email": "jossbuswell@gmail.com",
+    "photo": "../images/u17-girls/joss-buswell.jpg"
+  },
+  {
+    "name": "Khloe Dewitt",
+    "number": 21,
+    "position": "CB",
+    "year": 2028,
+    "gpa": "3.85",
+    "school": "Park City High School",
+    "email": "khloedewitt@gmail.com",
+    "photo": "../images/u17-girls/khloe-dewitt.jpg"
+  }
+];
+const groups={GK:['GK'],DEF:['DEF','CB','LB','RB','WB'],MID:['MID','CM','CDM','ACM'],FWD:['FWD','RW','LW','CF']};
+const grid=document.getElementById('grid'),count=document.getElementById('count');
+const search=document.getElementById('search'),jersey=document.getElementById('jersey'),position=document.getElementById('position'),year=document.getElementById('year');
+function render(){
+ const q=search.value.trim().toLowerCase(),n=jersey.value.trim(),pos=position.value,y=year.value;
+ const result=PLAYERS.filter(p=>p.name.toLowerCase().includes(q)&&(!n||String(p.number)===n)&&(!y||String(p.year)===y)&&(!pos||p.position.split(', ').some(t=>groups[pos].includes(t))));
+ grid.replaceChildren();count.textContent=`Showing ${result.length} of ${PLAYERS.length} players`;
+ for(const p of result){
+  const card=document.createElement('article');card.className='card';
+  const portrait=document.createElement('div');portrait.className='portrait';
+  const img=document.createElement('img');img.src=p.photo;img.alt=`Portrait of ${p.name}`;img.loading='lazy';img.onerror=()=>{img.style.display='none'};
+  const num=document.createElement('span');num.className='number';num.textContent='#'+p.number;portrait.append(img,num);
+  const info=document.createElement('div');info.className='info';
+  const name=document.createElement('h3');name.textContent=p.name;
+  const tag=document.createElement('span');tag.className='position';tag.textContent=p.position;
+  const details=document.createElement('div');details.className='details';
+  const grad=document.createElement('span');grad.textContent='Class of '+p.year;
+  const gpa=document.createElement('span');gpa.textContent='GPA '+p.gpa;
+  const school=document.createElement('p');school.className='school';school.textContent=p.school;
+  const email=document.createElement('a');email.className='email';email.href='mailto:'+p.email;email.textContent=p.email;
+  details.append(grad,gpa);info.append(name,tag,details,school,email);card.append(portrait,info);grid.append(card);
+ }
+ if(!result.length){const empty=document.createElement('p');empty.textContent='No players match your search.';grid.append(empty)}
+}
+[search,jersey,position,year].forEach(el=>el.addEventListener('input',render));render();
+</script></body></html>
