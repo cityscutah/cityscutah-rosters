@@ -1,605 +1,218 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>City SC Utah | U18/U19 Girls Academy</title>
-
-  <style>
-    /* =========================
-       GLOBAL STYLES
-    ========================= */
-
-    :root {
-      font-family: system-ui, -apple-system, Arial, sans-serif;
-      color: #18274c;
-      background: #f4f6fb;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-    }
-
-    /* =========================
-       HEADER
-    ========================= */
-
-    header {
-      background: #102d86;
-      color: white;
-      text-align: center;
-      padding: 26px 16px;
-    }
-
-    header img {
-      width: 112px;
-      height: 112px;
-      object-fit: contain;
-    }
-
-    header h1 {
-      margin: 8px 0;
-      font-size: clamp(26px, 5vw, 40px);
-    }
-
-    header p {
-      margin: 5px 0;
-      color: #ffe4a4;
-    }
-
-    .back {
-      display: inline-block;
-      margin-top: 14px;
-      color: white;
-      text-decoration: none;
-      border: 1px solid #ffffff70;
-      border-radius: 30px;
-      padding: 9px 17px;
-    }
-
-    /* =========================
-       MAIN CONTENT
-    ========================= */
-
-    .wrap {
-      max-width: 1100px;
-      margin: auto;
-      padding: 24px 16px;
-    }
-
-    /* =========================
-       SEARCH AND FILTERS
-    ========================= */
-
-    .controls {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 20px;
-    }
-
-    .controls input,
-    .controls select {
-      font: inherit;
-      min-width: 140px;
-      flex: 1;
-      padding: 12px;
-      border: 1px solid #cbd3e2;
-      border-radius: 10px;
-      background: white;
-    }
-
-    /* =========================
-       PLAYER GRID
-    ========================= */
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(
-        auto-fit,
-        minmax(220px, 1fr)
-      );
-      gap: 16px;
-    }
-
-    /* =========================
-       PLAYER CARDS
-    ========================= */
-
-    .card {
-      background: white;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 4px 18px #172c501a;
-    }
-
-    /* Player Photos */
-
-    .photo {
-      height: 220px;
-      background: linear-gradient(
-        140deg,
-        #12328b,
-        #8294bd
-      );
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 56px;
-    }
-
-    .photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-    }
-
-    /* Player Information */
-
-    .info {
-      padding: 15px;
-    }
-
-    .info h2 {
-      font-size: 18px;
-      margin: 0 0 6px;
-    }
-
-    .tag {
-      display: inline-block;
-      background: #ffebe0;
-      color: #a84225;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 700;
-      padding: 5px 9px;
-      margin-bottom: 8px;
-    }
-
-    .info p {
-      font-size: 14px;
-      margin: 5px 0;
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      text-align: center;
-      color: #64718c;
-      padding: 28px 12px;
-    }
-
-    /* =========================
-       MOBILE RESPONSIVENESS
-    ========================= */
-
-    @media (max-width: 540px) {
-
-      .grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
-      }
-
-      .photo {
-        height: 160px;
-      }
-
-      .info {
-        padding: 11px;
-      }
-
-      .info h2 {
-        font-size: 15px;
-      }
-
-      .info p {
-        font-size: 12px;
-      }
-
-      .controls input {
-        flex-basis: 100%;
-      }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10296d">
+<title>City SC Utah | U18/U19 Boys MLS NEXT</title>
+<style>
+:root{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#172a51;background:#f3f6fb}*{box-sizing:border-box}body{margin:0}
+header{background:linear-gradient(130deg,#0b2678,#152a55);color:white;text-align:center;padding:24px 16px 34px}header img{width:94px;height:94px;object-fit:contain}h1{font-size:clamp(25px,5vw,40px);margin:9px 0 4px}header p{margin:4px 0;color:#ffe3aa}
+a.back{display:inline-block;color:white;text-decoration:none;border:1px solid #ffffff85;padding:10px 17px;border-radius:24px;margin-top:16px}a.back:hover,a.back:focus-visible{background:#ffffff25}
+main{max-width:1100px;margin:auto;padding:25px 16px}.intro{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:20px}.intro h2{margin:0;font-size:21px}.intro p{margin:5px 0 0;color:#52617a}.coach{font-size:13px;background:white;border:1px solid #e3e8f1;padding:11px 15px;border-radius:12px}.coach a{color:#123e9a}
+.controls{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:10px;margin:0 0 13px}.controls input,.controls select{width:100%;min-width:0;font:inherit;padding:12px;border:1px solid #cbd5e5;border-radius:10px;background:white}.count{font-size:13px;color:#5d6a7f;margin-bottom:15px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 4px 16px #132c4c15;border:1px solid #e7ebf3}.portrait{height:210px;background:#dfe8f5;position:relative;display:grid;place-items:center}.portrait img{width:100%;height:100%;object-fit:cover;object-position:center 26%}.number{position:absolute;top:12px;left:12px;background:#102d86;color:white;border-radius:9px;padding:7px 10px;font-weight:800}.info{padding:15px}.info h3{font-size:18px;margin:0 0 7px}.position{display:inline-block;background:#fff0e0;color:#984313;font-size:12px;font-weight:700;padding:5px 9px;border-radius:16px}.details{display:flex;gap:8px;justify-content:space-between;flex-wrap:wrap;margin-top:12px;font-size:13px;color:#4c5b74}footer{text-align:center;color:#63718a;font-size:12px;padding:26px 15px}
+@media(max-width:750px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.controls{grid-template-columns:repeat(2,minmax(0,1fr))}.portrait{height:180px}.info{padding:12px}.info h3{font-size:15px}}@media(max-width:390px){.portrait{height:145px}.details{font-size:12px}.controls{gap:7px}}
+</style>
 </head>
-
 <body>
-
-  <!-- =========================
-       HEADER
-  ========================= -->
-
-  <header>
-
-    <img
-      src="../logo.png"
-      alt="City SC Utah logo"
-      onerror="this.style.display='none'"
-    >
-
-    <h1>CITY SC UTAH</h1>
-
-    <p>GIRLS ACADEMY · U18 / U19</p>
-
-    <div>
-      To build great players and great people
-    </div>
-
-    <a class="back" href="../index.html">
-      ← Back to All Rosters
-    </a>
-
-  </header>
-
-  <!-- =========================
-       MAIN ROSTER SECTION
-  ========================= -->
-
-  <main class="wrap">
-
-    <!-- SEARCH AND FILTERS -->
-
-    <div class="controls">
-
-      <input
-        id="search"
-        type="search"
-        placeholder="Search player or school"
-        aria-label="Search player or school"
-      >
-
-      <select id="position" aria-label="Filter position">
-        <option value="">All positions</option>
-        <option>Goalkeeper</option>
-        <option>Defender</option>
-        <option>Midfielder</option>
-        <option>Forward</option>
-      </select>
-
-      <select id="year" aria-label="Filter graduation year">
-        <option value="">All graduation years</option>
-        <option>2027</option>
-        <option>2028</option>
-      </select>
-
-    </div>
-
-    <!-- PLAYER CARDS GENERATED BY JAVASCRIPT -->
-
-    <div id="grid" class="grid"></div>
-
-  </main>
-
-  <!-- =========================
-       FOOTER
-  ========================= -->
-
-  <footer>
-    City SC Utah Girls Academy · Player directory
-  </footer>
-
-  <!-- =========================
-       JAVASCRIPT
-  ========================= -->
-
-  <script>
-
-    /* =========================
-       PLAYER ROSTER DATA
-
-       Edit player information here.
-       Photos are stored in:
-       ../images/
-
-       Only publish approved player
-       information and photos.
-    ========================= */
-
-    const PLAYERS = [
-
-      // GOALKEEPERS
-
-      {
-        name: 'McKinley Stowell',
-        number: 1,
-        position: 'Goalkeeper',
-        year: 2027,
-        school: 'Mountain Ridge High School',
-        photo: '../images/mckinley.jpg'
-      },
-
-      {
-        name: 'Maizey Miller',
-        number: 55,
-        position: 'Goalkeeper',
-        year: 2027,
-        school: 'East High School',
-        photo: '../images/maizey.jpg'
-      },
-
-      // DEFENDERS
-
-      {
-        name: 'Evelyn Woolley',
-        number: 3,
-        position: 'Defender',
-        year: 2027,
-        school: 'Alta High School',
-        photo: '../images/evelyn.jpg'
-      },
-
-      {
-        name: 'Bella Ziegenbusch',
-        number: 4,
-        position: 'Defender',
-        year: 2028,
-        school: 'Herriman High School',
-        photo: '../images/bella.jpg'
-      },
-
-      {
-        name: 'Addison Despain',
-        number: 8,
-        position: 'Defender',
-        year: 2027,
-        school: 'Brighton High School',
-        photo: '../images/addison-despain.jpg'
-      },
-
-      {
-        name: 'Brylee Newport',
-        number: 11,
-        position: 'Defender',
-        year: 2027,
-        school: 'Juan Diego High School',
-        photo: '../images/brylee.jpg'
-      },
-
-      {
-        name: 'Samantha Raiford',
-        number: null,
-        position: 'Defender',
-        year: 2028,
-        school: 'Mountain Ridge High School',
-        photo: '../images/samantha.jpg'
-      },
-
-      // MIDFIELDERS
-
-      {
-        name: 'Juniper Bales',
-        number: 6,
-        position: 'Midfielder',
-        year: 2027,
-        school: 'Park City High School',
-        photo: '../images/juniper.jpg'
-      },
-
-      {
-        name: 'Paige Proctor',
-        number: 7,
-        position: 'Midfielder',
-        year: 2027,
-        school: 'Olympus High School',
-        photo: '../images/paige.jpg'
-      },
-
-      {
-        name: 'Emmy Mulligan',
-        number: 20,
-        position: 'Midfielder',
-        year: 2027,
-        school: 'Olympus High School',
-        photo: '../images/emmy.jpg'
-      },
-
-      {
-        name: 'Sophia Agrapides',
-        number: 22,
-        position: 'Midfielder',
-        year: 2028,
-        school: 'Corner Canyon High School',
-        photo: '../images/sophia.jpg'
-      },
-
-      {
-        name: 'London Pace',
-        number: 24,
-        position: 'Midfielder',
-        year: 2027,
-        school: 'Bingham High School',
-        photo: '../images/london.jpg'
-      },
-
-      // FORWARDS
-
-      {
-        name: 'Lily Pearce',
-        number: 13,
-        position: 'Forward',
-        year: 2027,
-        school: 'Corner Canyon High School',
-        photo: '../images/lily.jpg'
-      },
-
-      {
-        name: 'Ellie Tilt',
-        number: 16,
-        position: 'Forward',
-        year: 2027,
-        school: 'Alta High School',
-        photo: '../images/ellie.jpg'
-      },
-
-      {
-        name: 'Addison Bowers',
-        number: 18,
-        position: 'Forward',
-        year: 2027,
-        school: 'Park City High School',
-        photo: '../images/addison-bowers.jpg'
-      },
-
-      {
-        name: 'Mikelle Walker',
-        number: 28,
-        position: 'Forward',
-        year: 2027,
-        school: 'Bingham High School',
-        photo: '../images/mikelle.jpg'
-      }
-
-    ];
-
-    /* =========================
-       GET PAGE ELEMENTS
-    ========================= */
-
-    const grid = document.getElementById('grid');
-    const search = document.getElementById('search');
-    const position = document.getElementById('position');
-    const year = document.getElementById('year');
-
-    /* =========================
-       RENDER PLAYER CARDS
-    ========================= */
-
-    function render() {
-
-      const q = search.value.trim().toLowerCase();
-
-      // Filter players
-
-      const filtered = PLAYERS.filter(p => {
-
-        const matchesSearch = (
-          p.name + ' ' +
-          p.school + ' ' +
-          (p.number ?? '')
-        ).toLowerCase().includes(q);
-
-        const matchesPosition =
-          !position.value ||
-          p.position === position.value;
-
-        const matchesYear =
-          !year.value ||
-          String(p.year) === year.value;
-
-        return (
-          matchesSearch &&
-          matchesPosition &&
-          matchesYear
-        );
-
-      });
-
-      // Clear previous cards
-
-      grid.replaceChildren();
-
-      // Create player cards
-
-      for (const p of filtered) {
-
-        const card = document.createElement('article');
-        card.className = 'card';
-
-        /* PLAYER PHOTO */
-
-        const photo = document.createElement('div');
-        photo.className = 'photo';
-
-        const fallback = () => {
-          photo.replaceChildren();
-          photo.textContent = '⚽';
-        };
-
-        if (p.photo) {
-
-          const img = document.createElement('img');
-
-          img.src = p.photo;
-          img.alt = 'Photo of ' + p.name;
-          img.loading = 'lazy';
-          img.onerror = fallback;
-
-          photo.append(img);
-
-        } else {
-          fallback();
-        }
-
-        /* PLAYER INFORMATION */
-
-        const info = document.createElement('div');
-        info.className = 'info';
-
-        const name = document.createElement('h2');
-        name.textContent = p.name;
-
-        const tag = document.createElement('span');
-        tag.className = 'tag';
-        tag.textContent = p.position;
-
-        const details = document.createElement('p');
-
-        details.textContent =
-          (p.number == null ? '' : '#' + p.number + ' · ') +
-          'Class of ' + p.year;
-
-        const school = document.createElement('p');
-        school.textContent = p.school;
-
-        /* ASSEMBLE CARD */
-
-        info.append(name, tag, details, school);
-        card.append(photo, info);
-        grid.append(card);
-
-      }
-
-      /* NO SEARCH RESULTS */
-
-      if (!filtered.length) {
-
-        const msg = document.createElement('p');
-
-        msg.textContent =
-          'No players match your filters.';
-
-        grid.append(msg);
-
-      }
-
-    }
-
-    /* =========================
-       SEARCH AND FILTER EVENTS
-    ========================= */
-
-    [search, position, year].forEach(el => {
-      el.addEventListener('input', render);
-    });
-
-    /* =========================
-       INITIAL PAGE LOAD
-    ========================= */
-
-    render();
-
-  </script>
-
+<header>
+<img src="../logo.png" alt="City SC Utah logo">
+<h1>CITY SC UTAH</h1>
+<p>U18 / U19 BOYS · MLS NEXT</p>
+<p>To build great players and great people</p>
+<a class="back" href="../index.html">← Back to Roster Hub</a>
+</header>
+<main>
+<section class="intro"><div><h2>Team Roster</h2><p>Search and explore the U18/U19 Boys team.</p></div><div class="coach"><b>Coach: Patrick Rennie</b><div><a href="mailto:prennie@cityscutah.com">prennie@cityscutah.com</a></div><div><a href="tel:+18016886537">801-688-6537</a></div></div></section>
+<div class="controls">
+<input id="search" type="search" placeholder="Search player name" aria-label="Search player name">
+<input id="jersey" type="number" min="0" placeholder="Jersey #" aria-label="Search jersey number">
+<select id="position" aria-label="Filter position"><option value="">All positions</option><option value="GK">Goalkeeper</option><option value="DEF">Defender</option><option value="MID">Midfielder</option><option value="FWD">Forward</option></select>
+<select id="year" aria-label="Graduation year"><option value="">All graduation years</option><option value="2027">2027</option><option value="2028">2028</option></select>
+</div>
+<div id="count" class="count" aria-live="polite"></div><div id="grid" class="grid"></div>
+</main>
+<footer>City SC Utah · U18/U19 Boys · Player details based on supplied team profile sheet</footer>
+<script>
+// Update player details and image paths here. Publish only information approved for public use.
+const PLAYERS = [
+  {
+    "name": "Jake Domingues",
+    "number": 1,
+    "position": "GK",
+    "year": 2027,
+    "gpa": "3.50",
+    "photo": "../images/u18-u19-boys/jake-domingues.jpg"
+  },
+  {
+    "name": "Lautaro Reyes",
+    "number": 6,
+    "position": "DCM",
+    "year": 2027,
+    "gpa": "2.00",
+    "photo": "../images/u18-u19-boys/lautaro-reyes.jpg"
+  },
+  {
+    "name": "Will Harris",
+    "number": 2,
+    "position": "RW, CF",
+    "year": 2027,
+    "gpa": "3.95",
+    "photo": "../images/u18-u19-boys/will-harris.jpg"
+  },
+  {
+    "name": "Caleb Chavez",
+    "number": 7,
+    "position": "LW, RW",
+    "year": 2027,
+    "gpa": "3.60",
+    "photo": "../images/u18-u19-boys/caleb-chavez.jpg"
+  },
+  {
+    "name": "Eli Grow",
+    "number": 3,
+    "position": "LB, RB",
+    "year": 2027,
+    "gpa": "4.00",
+    "photo": "../images/u18-u19-boys/eli-grow.jpg"
+  },
+  {
+    "name": "Zach Pulsipher",
+    "number": 9,
+    "position": "GK",
+    "year": 2027,
+    "gpa": "3.76",
+    "photo": "../images/u18-u19-boys/zach-pulsipher.jpg"
+  },
+  {
+    "name": "Josh Pennock",
+    "number": 4,
+    "position": "CB",
+    "year": 2027,
+    "gpa": "3.85",
+    "photo": "../images/u18-u19-boys/josh-pennock.jpg"
+  },
+  {
+    "name": "Sebastian Garcia",
+    "number": 10,
+    "position": "F",
+    "year": 2027,
+    "gpa": "3.70",
+    "photo": "../images/u18-u19-boys/sebastian-garcia.jpg"
+  },
+  {
+    "name": "Nash Lassig",
+    "number": 5,
+    "position": "ACM",
+    "year": 2028,
+    "gpa": "3.10",
+    "photo": "../images/u18-u19-boys/nash-lassig.jpg"
+  },
+  {
+    "name": "Brock Alleman",
+    "number": 11,
+    "position": "F",
+    "year": 2027,
+    "gpa": "3.80",
+    "photo": "../images/u18-u19-boys/brock-alleman.jpg"
+  },
+  {
+    "name": "Jason Martin",
+    "number": 13,
+    "position": "DCM, LB, RB",
+    "year": 2027,
+    "gpa": "3.50",
+    "photo": "../images/u18-u19-boys/jason-martin.jpg"
+  },
+  {
+    "name": "Brock Rhodes",
+    "number": 19,
+    "position": "CB",
+    "year": 2027,
+    "gpa": "3.30",
+    "photo": "../images/u18-u19-boys/brock-rhodes.jpg"
+  },
+  {
+    "name": "Brody Alleman",
+    "number": 14,
+    "position": "ACM",
+    "year": 2028,
+    "gpa": "3.55",
+    "photo": "../images/u18-u19-boys/brody-alleman.jpg"
+  },
+  {
+    "name": "Jex Lujan",
+    "number": 22,
+    "position": "LW, RW",
+    "year": 2027,
+    "gpa": "3.75",
+    "photo": "../images/u18-u19-boys/jex-lujan.jpg"
+  },
+  {
+    "name": "Jameson Hoops",
+    "number": 16,
+    "position": "ACM, CB",
+    "year": 2027,
+    "gpa": "3.70",
+    "photo": "../images/u18-u19-boys/jameson-hoops.jpg"
+  },
+  {
+    "name": "Creighton Barnes",
+    "number": 33,
+    "position": "LB",
+    "year": 2027,
+    "gpa": "3.73",
+    "photo": "../images/u18-u19-boys/creighton-barnes.jpg"
+  },
+  {
+    "name": "Henry Harris",
+    "number": 17,
+    "position": "ACM, CDM",
+    "year": 2028,
+    "gpa": "4.0",
+    "photo": "../images/u18-u19-boys/henry-harris.jpg"
+  },
+  {
+    "name": "Kai Brown",
+    "number": 66,
+    "position": "ACM",
+    "year": 2027,
+    "gpa": "3.90",
+    "photo": "../images/u18-u19-boys/kai-brown.jpg"
+  },
+  {
+    "name": "Tate Nelson",
+    "number": 18,
+    "position": "DCM, CB",
+    "year": 2027,
+    "gpa": "3.90",
+    "photo": "../images/u18-u19-boys/tate-nelson.jpg"
+  }
+];
+const groups={GK:['GK'],DEF:['LB','RB','CB','LCB','RCB'],MID:['DCM','CDM','ACM','CM','AM'],FWD:['F','CF','RW','LW']};
+const grid=document.getElementById('grid'),count=document.getElementById('count');
+const search=document.getElementById('search'),jersey=document.getElementById('jersey'),position=document.getElementById('position'),year=document.getElementById('year');
+function render(){
+ const q=search.value.trim().toLowerCase(),n=jersey.value.trim(),pos=position.value,y=year.value;
+ const result=PLAYERS.filter(p=>p.name.toLowerCase().includes(q)&&(!n||String(p.number)===n)&&(!y||String(p.year)===y)&&(!pos||p.position.split(',').map(s=>s.trim()).some(t=>groups[pos].includes(t))));
+ grid.replaceChildren();count.textContent=`Showing ${result.length} of ${PLAYERS.length} players`;
+ for(const p of result){
+  const card=document.createElement('article');card.className='card';
+  const portrait=document.createElement('div');portrait.className='portrait';
+  const img=document.createElement('img');img.src=p.photo;img.alt=`Portrait of ${p.name}`;img.loading='lazy';img.onerror=()=>{img.remove();portrait.textContent='⚽';portrait.append(num)};
+  const num=document.createElement('span');num.className='number';num.textContent='#'+p.number;portrait.append(img,num);
+  const info=document.createElement('div');info.className='info';
+  const name=document.createElement('h3');name.textContent=p.name;
+  const tag=document.createElement('span');tag.className='position';tag.textContent=p.position;
+  const details=document.createElement('div');details.className='details';
+  const grad=document.createElement('span');grad.textContent='Class of '+p.year;
+  const gpa=document.createElement('span');gpa.textContent='GPA '+p.gpa;
+  details.append(grad,gpa);info.append(name,tag,details);card.append(portrait,info);grid.append(card);
+ }
+ if(!result.length){const empty=document.createElement('p');empty.textContent='No players match your search.';grid.append(empty)}
+}
+[search,jersey,position,year].forEach(el=>el.addEventListener('input',render));render();
+</script>
 </body>
 </html>
