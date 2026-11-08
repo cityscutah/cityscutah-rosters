@@ -1,13 +1,265 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#10296d"><title>City SC Utah | U18/U19 Girls Academy</title><style>
-:root{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#172a51;background:#f3f6fb}*{box-sizing:border-box}body{margin:0}header{background:linear-gradient(130deg,#0b2678,#152a55);color:white;text-align:center;padding:24px 16px 34px}header img{width:94px;height:94px;object-fit:contain}h1{font-size:clamp(25px,5vw,40px);margin:9px 0 4px}header p{margin:4px 0;color:#ffe3aa}a.back{display:inline-block;color:white;text-decoration:none;border:1px solid #ffffff85;padding:10px 17px;border-radius:24px;margin-top:16px}main{max-width:1100px;margin:auto;padding:25px 16px}.intro{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:20px}.intro h2{margin:0;font-size:21px}.intro p{margin:5px 0 0;color:#52617a}.coach{font-size:13px;background:white;border:1px solid #e3e8f1;padding:11px 15px;border-radius:12px}.coach a{color:#123e9a}.controls{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:10px;margin:0 0 13px}.controls input,.controls select{width:100%;min-width:0;font:inherit;padding:12px;border:1px solid #cbd5e5;border-radius:10px;background:white}.count{font-size:13px;color:#5d6a7f;margin-bottom:15px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 4px 16px #132c4c15;border:1px solid #e7ebf3}.portrait{height:210px;background:#dfe8f5;position:relative}.portrait img{width:100%;height:100%;object-fit:cover;object-position:center 26%}.number{position:absolute;top:12px;left:12px;background:#102d86;color:white;border-radius:9px;padding:7px 10px;font-weight:800}.info{padding:15px}.info h3{font-size:18px;margin:0 0 7px}.position{display:inline-block;background:#fff0e0;color:#984313;font-size:12px;font-weight:700;padding:5px 9px;border-radius:16px}.details{display:flex;gap:8px;justify-content:space-between;flex-wrap:wrap;margin-top:12px;font-size:13px;color:#4c5b74}.school{font-size:13px;color:#52617a;margin:10px 0 5px}.email{font-size:12px;overflow-wrap:anywhere;color:#123e9a}footer{text-align:center;color:#63718a;font-size:12px;padding:26px 15px}@media(max-width:750px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.controls{grid-template-columns:repeat(2,minmax(0,1fr))}.portrait{height:180px}.info{padding:12px}.info h3{font-size:15px}}@media(max-width:390px){.portrait{height:145px}.details{font-size:12px}.controls{gap:7px}}
-</style></head><body>
-<header><img src="../logo.png" alt="City SC Utah logo"><h1>CITY SC UTAH</h1><p>U18 / U19 GIRLS · GIRLS ACADEMY</p><p>To build great players and great people</p><a class="back" href="../index.html">← Back to Roster Hub</a></header>
-<main><section class="intro"><div><h2>Team Roster</h2><p>Search and explore the U18/U19 Girls Academy team.</p></div><div class="coach"><b>Coach: Patrick Rennie</b><div><a href="mailto:prennie@cityscutah.com">prennie@cityscutah.com</a></div><div><a href="tel:+18016886537">(801) 688-6537</a></div></div></section>
-<div class="controls"><input id="search" type="search" placeholder="Search player or school" aria-label="Search player or school"><input id="jersey" type="number" min="0" placeholder="Jersey #" aria-label="Search jersey number"><select id="position" aria-label="Filter position"><option value="">All positions</option><option value="GK">Goalkeeper</option><option value="DEF">Defender</option><option value="MID">Midfielder</option><option value="FWD">Forward</option></select><select id="year" aria-label="Graduation year"><option value="">All graduation years</option><option value="2027">2027</option><option value="2028">2028</option></select></div><div id="count" class="count" aria-live="polite"></div><div id="grid" class="grid"></div></main>
-<footer>City SC Utah · U18/U19 Girls Academy · Player details based on supplied team roster image</footer><script>
-const PLAYERS = [
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="#10296d" name="theme-color"/>
+  <title>
+   City SC Utah | U18/U19 Girls Academy
+  </title>
+  <style>
+   :root {
+  font-family:system-ui,-apple-system,Segoe UI,sans-serif;
+  color:#172a51;
+  background:#f3f6fb}
+  * {
+    box-sizing:border-box}
+    body {
+      margin:0}
+      header {
+        background:linear-gradient(130deg,#0b2678,#152a55);
+        color:white;
+        text-align:center;
+        padding:24px 16px 34px}
+        header img {
+          width:94px;
+          height:94px;
+          object-fit:contain}
+          h1 {
+            font-size:clamp(25px,5vw,40px);
+            margin:9px 0 4px}
+            header p {
+              margin:4px 0;
+              color:#ffe3aa}
+              a.back {
+                display:inline-block;
+                color:white;
+                text-decoration:none;
+                border:1px solid #ffffff85;
+                padding:10px 17px;
+                border-radius:24px;
+                margin-top:16px}
+                main {
+                  max-width:1100px;
+                  margin:auto;
+                  padding:25px 16px}
+                  .intro {
+                    display:flex;
+                    justify-content:space-between;
+                    gap:12px;
+                    align-items:center;
+                    flex-wrap:wrap;
+                    margin-bottom:20px}
+                    .intro h2 {
+                      margin:0;
+                      font-size:21px}
+                      .intro p {
+                        margin:5px 0 0;
+                        color:#52617a}
+                        .coach {
+                          font-size:13px;
+                          background:white;
+                          border:1px solid #e3e8f1;
+                          padding:11px 15px;
+                          border-radius:12px}
+                          .coach a {
+                            color:#123e9a}
+                            .controls {
+                              display:grid;
+                              grid-template-columns:2fr 1fr 1fr 1fr;
+                              gap:10px;
+                              margin:0 0 13px}
+                              .controls input,.controls select {
+                                width:100%;
+                                min-width:0;
+                                font:inherit;
+                                padding:12px;
+                                border:1px solid #cbd5e5;
+                                border-radius:10px;
+                                background:white}
+                                .count {
+                                  font-size:13px;
+                                  color:#5d6a7f;
+                                  margin-bottom:15px}
+                                  .grid {
+                                    display:grid;
+                                    grid-template-columns:repeat(3,minmax(0,1fr));
+                                    gap:17px}
+                                    .card {
+                                      background:white;
+                                      border-radius:16px;
+                                      overflow:hidden;
+                                      box-shadow:0 4px 16px #132c4c15;
+                                      border:1px solid #e7ebf3}
+                                      .portrait {
+                                        height:210px;
+                                        background:#dfe8f5;
+                                        position:relative}
+                                        .portrait img {
+                                          width:100%;
+                                          height:100%;
+                                          object-fit:cover;
+                                          object-position:center 26%}
+                                          .number {
+                                            position:absolute;
+                                            top:12px;
+                                            left:12px;
+                                            background:#102d86;
+                                            color:white;
+                                            border-radius:9px;
+                                            padding:7px 10px;
+                                            font-weight:800}
+                                            .info {
+                                              padding:15px}
+                                              .info h3 {
+                                                font-size:18px;
+                                                margin:0 0 7px}
+                                                .position {
+                                                  display:inline-block;
+                                                  background:#fff0e0;
+                                                  color:#984313;
+                                                  font-size:12px;
+                                                  font-weight:700;
+                                                  padding:5px 9px;
+                                                  border-radius:16px}
+                                                  .details {
+                                                    display:flex;
+                                                    gap:8px;
+                                                    justify-content:space-between;
+                                                    flex-wrap:wrap;
+                                                    margin-top:12px;
+                                                    font-size:13px;
+                                                    color:#4c5b74}
+                                                    .school {
+                                                      font-size:13px;
+                                                      color:#52617a;
+                                                      margin:10px 0 5px}
+                                                      .email {
+                                                        font-size:12px;
+                                                        overflow-wrap:anywhere;
+                                                        color:#123e9a}
+                                                        footer {
+                                                          text-align:center;
+                                                          color:#63718a;
+                                                          font-size:12px;
+                                                          padding:26px 15px}
+                                                          @media(max-width:750px) {
+                                                            .grid {
+                                                              grid-template-columns:repeat(2,minmax(0,1fr));
+                                                              gap:10px}
+                                                              .controls {
+                                                                grid-template-columns:repeat(2,minmax(0,1fr))}
+                                                                .portrait {
+                                                                  height:180px}
+                                                                  .info {
+                                                                    padding:12px}
+                                                                    .info h3 {
+                                                                      font-size:15px}
+                                                                    }
+                                                                    @media(max-width:390px) {
+                                                                      .portrait {
+                                                                        height:145px}
+                                                                        .details {
+                                                                          font-size:12px}
+                                                                          .controls {
+                                                                            gap:7px}
+                                                                          }
+                                                                          .committed  {
+                                                                            color: #dc2626;
+                                                                            font-size: 12px;
+                                                                            font-weight: 800;
+                                                                            margin-left: 8px;
+                                                                            text-transform: uppercase;
+                                                                          }
+  </style>
+ </head>
+ <body>
+  <header>
+   <img alt="City SC Utah logo" src="../logo.png"/>
+   <h1>
+    CITY SC UTAH
+   </h1>
+   <p>
+    U18 / U19 GIRLS · GIRLS ACADEMY
+   </p>
+   <p>
+    To build great players and great people
+   </p>
+   <a class="back" href="../index.html">
+    ← Back to Roster Hub
+   </a>
+  </header>
+  <main>
+   <section class="intro">
+    <div>
+     <h2>
+      Team Roster
+     </h2>
+     <p>
+      Search and explore the U18/U19 Girls Academy team.
+     </p>
+    </div>
+    <div class="coach">
+     <b>
+      Coach: Patrick Rennie
+     </b>
+     <div>
+      <a href="mailto:prennie@cityscutah.com">
+       prennie@cityscutah.com
+      </a>
+     </div>
+     <div>
+      <a href="tel:+18016886537">
+       (801) 688-6537
+      </a>
+     </div>
+    </div>
+   </section>
+   <div class="controls">
+    <input aria-label="Search player or school" id="search" placeholder="Search player or school" type="search"/>
+    <input aria-label="Search jersey number" id="jersey" min="0" placeholder="Jersey #" type="number"/>
+    <select aria-label="Filter position" id="position">
+     <option value="">
+      All positions
+     </option>
+     <option value="GK">
+      Goalkeeper
+     </option>
+     <option value="DEF">
+      Defender
+     </option>
+     <option value="MID">
+      Midfielder
+     </option>
+     <option value="FWD">
+      Forward
+     </option>
+    </select>
+    <select aria-label="Graduation year" id="year">
+     <option value="">
+      All graduation years
+     </option>
+     <option value="2027">
+      2027
+     </option>
+     <option value="2028">
+      2028
+     </option>
+    </select>
+   </div>
+   <div aria-live="polite" class="count" id="count">
+   </div>
+   <div class="grid" id="grid">
+   </div>
+  </main>
+  <footer>
+   City SC Utah · U18/U19 Girls Academy · Player details based on supplied team roster image
+  </footer>
+  <script>
+   const PLAYERS = [
   {
     "name": "McKinley Stowell",
+    "committed": false,
     "number": 1,
     "position": "GK",
     "year": 2027,
@@ -18,6 +270,7 @@ const PLAYERS = [
   },
   {
     "name": "Evelyn Woolley",
+    "committed": false,
     "number": 3,
     "position": "OB, W",
     "year": 2027,
@@ -28,6 +281,7 @@ const PLAYERS = [
   },
   {
     "name": "Bella Ziegenbusch",
+    "committed": false,
     "number": 4,
     "position": "DEF",
     "year": 2028,
@@ -38,6 +292,7 @@ const PLAYERS = [
   },
   {
     "name": "Juniper Bales",
+    "committed": false,
     "number": 6,
     "position": "MID",
     "year": 2027,
@@ -48,6 +303,7 @@ const PLAYERS = [
   },
   {
     "name": "Paige Proctor",
+    "committed": false,
     "number": 7,
     "position": "CB, FB, CDM",
     "year": 2027,
@@ -58,6 +314,7 @@ const PLAYERS = [
   },
   {
     "name": "Addison Despain",
+    "committed": false,
     "number": 8,
     "position": "OB, W",
     "year": 2027,
@@ -68,6 +325,7 @@ const PLAYERS = [
   },
   {
     "name": "Brylee Newport",
+    "committed": false,
     "number": 11,
     "position": "CB, FWD",
     "year": 2027,
@@ -78,6 +336,7 @@ const PLAYERS = [
   },
   {
     "name": "Lily Pearce",
+    "committed": false,
     "number": 13,
     "position": "FWD",
     "year": 2027,
@@ -88,6 +347,7 @@ const PLAYERS = [
   },
   {
     "name": "Ellie Tilt",
+    "committed": false,
     "number": 16,
     "position": "FWD, MID",
     "year": 2027,
@@ -98,6 +358,7 @@ const PLAYERS = [
   },
   {
     "name": "Addison Bowers",
+    "committed": true,
     "number": 18,
     "position": "FWD, OB, CB",
     "year": 2027,
@@ -108,6 +369,7 @@ const PLAYERS = [
   },
   {
     "name": "Emmy Mulligan",
+    "committed": false,
     "number": 20,
     "position": "CB, MID",
     "year": 2027,
@@ -118,6 +380,7 @@ const PLAYERS = [
   },
   {
     "name": "Sophia Agrapides",
+    "committed": false,
     "number": 22,
     "position": "MID, DEF",
     "year": 2028,
@@ -128,6 +391,7 @@ const PLAYERS = [
   },
   {
     "name": "London Pace",
+    "committed": false,
     "number": 24,
     "position": "MID, W",
     "year": 2027,
@@ -138,6 +402,7 @@ const PLAYERS = [
   },
   {
     "name": "Mikelle Walker",
+    "committed": true,
     "number": 28,
     "position": "W",
     "year": 2027,
@@ -148,6 +413,7 @@ const PLAYERS = [
   },
   {
     "name": "Maizey Miller",
+    "committed": false,
     "number": 55,
     "position": "GK",
     "year": 2027,
@@ -158,6 +424,7 @@ const PLAYERS = [
   },
   {
     "name": "Samantha Raiford",
+    "committed": false,
     "number": null,
     "position": "DEF, MID",
     "year": 2028,
@@ -180,7 +447,14 @@ function render(){
   const img=document.createElement('img');img.src=p.photo;img.alt=`Portrait of ${p.name}`;img.loading='lazy';img.onerror=()=>{img.style.display='none'};
   const num=document.createElement('span');num.className='number';num.textContent=p.number==null?'—':'#'+p.number;portrait.append(img,num);
   const info=document.createElement('div');info.className='info';
-  const name=document.createElement('h3');name.textContent=p.name;
+  const name = document.createElement('h3');
+   name.textContent = p.name;
+   if (p.committed === true) {
+     const badge = document.createElement('span');
+     badge.className = 'committed';
+     badge.textContent = 'COMMITTED';
+     name.appendChild(badge);
+   }
   const tag=document.createElement('span');tag.className='position';tag.textContent=p.position;
   const details=document.createElement('div');details.className='details';
   const grad=document.createElement('span');grad.textContent='Class of '+p.year;
@@ -192,4 +466,7 @@ function render(){
  if(!result.length){const empty=document.createElement('p');empty.textContent='No players match your search.';grid.append(empty)}
 }
 [search,jersey,position,year].forEach(el=>el.addEventListener('input',render));render();
-</script></body></html>
+  </script>
+ </body>
+</html>
+
